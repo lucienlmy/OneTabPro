@@ -26,3 +26,5 @@ yarn-error.log*
 *.sw*
 
 build/env.js
+key.pem
+*.pem

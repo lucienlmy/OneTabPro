@@ -193,7 +193,7 @@ export default {
         return;
       }
       let ds = getStorage('delete_site') || 2;
-      if (1 === +ds) {
+      if (1 === +ds && !item.isCollected && this.tabGroup.tabGroup !== 'collect_id') { // 添加 tabGroup 判断条件
         this.deleteItem(item, index);
       }
       openSite(item.path);
