@@ -134,6 +134,15 @@ export default {
     tabGroup (v) {
       this.tabGroupItem = v;
       this.tempTabs = Object.assign({}, v);
+    },
+    'tabGroupItem.tabs': {
+      handler(newTabs) {
+        // 当标签数为0且不是搜索结果页面时,自动删除标签组
+        if (newTabs.length === 0 && this.activeGroupIndex >= 0) {
+          this.deleteTabGroup();
+        }
+      },
+      deep: true
     }
   },
   methods: {
